@@ -11,3 +11,6 @@ $routes->get('/login', 'Home::login');
 
 // Pengurus
 $routes->get('/pengurus', [PengurusController::class ,'index']);
+
+// warga
+$routes->get('/warga', 'WargaController::index');
