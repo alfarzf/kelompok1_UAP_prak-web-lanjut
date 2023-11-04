@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="https://e-kkn.unila.ac.id/loginStyle/assets/img/unila.png">
     <link rel="icon" type="image/png" href="https://e-kkn.unila.ac.id/loginStyle/assets/img/unila.png">
     <title>Sistem Informasi Warga</title>
-    <link rel="stylesheet" href='../assets/css/warga.css'>
+    <!-- <link rel="stylesheet" href='../assets/css/warga.css'> -->
     <!-- <meta name="csrf-token" content="hylrLk5vZHOOK2PVFsidJ2uZjAnBFL3G0d7d2IOr"> -->
     <link href="https://e-kkn.unila.ac.id/css/app.css" rel="stylesheet">
     <link href="https://e-kkn.unila.ac.id/css/style.css" rel="stylesheet">
