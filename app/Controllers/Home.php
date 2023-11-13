@@ -10,12 +10,12 @@ class Home extends BaseController
         
         $path = "pengurus";
         if (in_groups("user")){
-             $path = "warga";
-         }else if(in_groups("super admin")){
+            $path = "warga";
+        }else if(in_groups("super admin")){
             $path = "superadmin";
-         }
-         return redirect()->route($path); 
-       }
+        }
+            return redirect()->route($path); 
+    }
     public function login(): string
     {
         return view('login');

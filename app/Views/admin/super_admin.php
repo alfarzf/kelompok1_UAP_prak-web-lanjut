@@ -44,7 +44,7 @@
                     </div>
                 </li>
                 <li class="active">
-                    <a href="#"><i class="fa fa-home"></i> <span class="nav-label">Home</span></a>
+                    <a href="<?= base_url('/admin') ?>"><i class="fa fa-home"></i> <span class="nav-label">Home</span></a>
                 </li>
                 <li class="">
                     <a href="#"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Informasi</span></a>
@@ -56,7 +56,7 @@
                     <a href="#"><i class="fa fa-credit-card"></i> <span class="nav-label">Pembayaran</span></a>
                 </li>
                 <li class="">
-                    <a href="#"><i class="fa fa-list"></i> <span class="nav-label">Daftar Warga</span></a>
+                    <a href="<?= base_url('/admin/daftar_warga') ?>"><i class="fa fa-list"></i> <span class="nav-label">Daftar Warga</span></a>
                 </li>
             </ul>
         </div>
