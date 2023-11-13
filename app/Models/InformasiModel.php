@@ -38,4 +38,19 @@ class InformasiModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+    public function saveInformasi($data){
+        $this->insert($data);
+    }
+    public function getInformasi($id=null){
+        if($id != null){
+            return $this->select('informasi.*, blok.nama_blok')->join('blok', 'blok.id=informasi.id_blok')->find($id);
+        }
+        return $this->select('informasi.*, blok.nama_blok')->join('blok', 'blok.id=informasi.id_blok')->findAll();
+    }
+    public function updateInformasi($data, $id){
+        return $this->update($id, $data);
+    }
+    public function deleteInformasi($id){
+        return $this->delete($id);
+    }
 }
