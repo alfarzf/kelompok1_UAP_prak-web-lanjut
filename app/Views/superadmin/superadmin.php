@@ -38,7 +38,7 @@
                             <img alt="image" class="img-circle" height="50" width="50" src="https://e-kkn.unila.ac.id/file/Biodata/2117051003_Januari_2024_2023-09-26_11-12-06.png" />
                         </span>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Alfa Rizki Fadlillah</strong>
+                        <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Ikhsan Saputra</strong>
                         </span> <span class="text-muted text-xs block">Option <b class="caret"></b></span> </span> </a>
                                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                             <li><a href="#">Profile</a></li>
@@ -96,7 +96,7 @@
                         <div class="wrapper wrapper-content animated fadeIn">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    Ini Halaman Awal Pengurus
+                                    Ini Halaman SUPER ADMIN
                                 </div>
                             </div>
                         </div>
