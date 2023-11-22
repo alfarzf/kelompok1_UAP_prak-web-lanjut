@@ -5,17 +5,20 @@ use App\Controllers\BaseController;
 use App\Models\BlokModel;
 use App\Models\InformasiModel;
 use App\Models\LaporanModel;
+use App\Models\WargaModel;
 
 class PengurusController extends BaseController
 {
     public $blokModel;
     public $informasiModel;
     public $laporanModel;
+    public $wargaModel;
 
     public function __construct(){
         $this->blokModel = new BlokModel();
         $this->informasiModel = new InformasiModel();
         $this->laporanModel = new LaporanModel();
+        $this->wargaModel = new WargaModel();
     }
     public function index()
     {
@@ -150,34 +153,25 @@ public function informasi()
         return view('pengurus/laporan', $data);
     }
 
-    // public function laporan_create(){
-    //     $data = [
-    //         // 'title' => 'List User',
-    //         'bloks' => $this->blokModel->getBlok()
-    //     ];
-    //     return view('pengurus/create_laporan', $data);
-    // }
+    public function laporan_create(){
+        $data = [
+            // 'title' => 'List User',
+            'warga' => $this->wargaModel->getWarga()
+        ];
+        return view('pengurus/create_laporan', $data);
+    }
 
-    // public function laporan_store(){
-    //     $data=[
-    //         'judul_laporan' => $this->request->getVar('judul_laporan'),
-    //         'deskripsi_laporan' => $this->request->getVar('deskripsi_laporan'),
-    //         'id_blok' => $this->request->getVar('blok'),
-    //         // 'nama_laporan' => $this->request->getVar('nama_laporan'),
-    //     ];
-    //     $path='assets/uploads/img/';
-    //     $foto=$this->request->getFile('foto');
-    //     if($foto->isValid()){
-    //         $name = $foto->getRandomName();
-    //         if($foto->move($path, $name)){
-    //             $foto = base_url($path . $name);
-    //             $data['foto']=$foto;
-    //         }
-    //     }
+    public function laporan_store(){
+        $data=[
+            'jenis_laporan' => $this->request->getVar('jenis_laporan'),
+            'deskripsi_laporan' => $this->request->getVar('deskripsi_laporan'),
+            'id_warga' => $this->request->getVar('pelapor'),
+            'status_laporan' => 'Belum Terverifikasi'
+        ];
 
-    //     $this->laporanModel->savelaporan($data);
-    //     return redirect()->to('/pengurus/laporan');
-    // }
+        $this->laporanModel->saveLaporan($data);
+        return redirect()->to('/pengurus/laporan');
+    }
 
     public function laporan_destroy($id){
         $this->laporanModel->deleteLaporan($id);

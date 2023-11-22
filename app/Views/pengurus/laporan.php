@@ -14,6 +14,7 @@
 <div class="col-lg-12">
 <div class="ibox-title table-responsive">
 		<h5>Laporan :</h5>
+        <a class="btn btn-primary btn-sm pull-right" href="<?= base_url('pengurus/laporan/create') ?>"><i class="fa fa-pencil-square-o"></i> Tambah Laporan</a>
     
 </div>
     <div class="ibox-content table-responsive">
