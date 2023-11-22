@@ -38,6 +38,7 @@ class LaporanModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
     public function saveLaporan($data){
         $this->insert($data);
     }
@@ -53,4 +54,5 @@ class LaporanModel extends Model
     public function deleteLaporan($id){
         return $this->delete($id);
     }
+
 }

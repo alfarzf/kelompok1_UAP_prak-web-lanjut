@@ -6,9 +6,9 @@ use App\Models\LaporanModel;
 
 class WargaController extends BaseController
 {
-
-    public $wargaModel;
     public $laporanModel;
+    public $wargaModel;
+
     public function __construct(){
         $this->laporanModel = new LaporanModel();
     }

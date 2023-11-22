@@ -32,6 +32,7 @@
                                         <!-- Add more options as needed -->
                                     </select>
                                     <input type="" class="form-control" id="jenis_laporan_text" name="jenis_laporan_text" value="<?= old('jenis_laporan_text');?>" placeholder="Other" style='margin-top: 5px; margin-bottom: 10px;'>
+
                                 </div>
                             </div>
                             
