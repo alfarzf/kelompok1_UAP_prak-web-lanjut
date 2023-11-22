@@ -38,4 +38,19 @@ class WargaModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+    public function saveWarga($data){
+        $this->insert($data);
+    }
+    public function getWarga($id=null){
+        if($id != null){
+            return $this->select('warga.*, blok.nama_blok')->join('blok', 'blok.id=warga.id_blok')->find($id);
+        }
+        return $this->select('warga.*, blok.nama_blok')->join('blok', 'blok.id=warga.id_blok')->findAll();
+    }
+    public function updateWarga($data, $id){
+        return $this->update($id, $data);
+    }
+    public function deleteWarga($id){
+        return $this->delete($id);
+    }
 }
