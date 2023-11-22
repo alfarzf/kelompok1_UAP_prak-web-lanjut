@@ -15,6 +15,11 @@ class AddKolomStatusLaporan extends Migration
                 'null' => true
             ]
         ]);
+        $this->forge->modifyColumn('laporan', [
+            'deskripsi_laporan' => [
+                'constraint' => 255
+            ]
+        ]);
     }
 
     public function down()

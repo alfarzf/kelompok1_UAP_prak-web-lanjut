@@ -23,10 +23,6 @@ class CreateLaporanTable extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '255'
             ],
-            'status_laporan' => [
-                'type' => 'VARCHAR',
-                'constraint' => '25'
-            ],
             'id_warga' => [
                 'type' => 'INT',
                 'constraint' => 10,

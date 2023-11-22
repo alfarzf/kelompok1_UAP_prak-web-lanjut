@@ -13,7 +13,7 @@ class LaporanModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['jenis_laporan','deskripsi_laporan','id_warga'];
+    protected $allowedFields    = ['jenis_laporan','deskripsi_laporan','id_warga', 'status_laporan'];
 
     // Dates
     protected $useTimestamps = true;

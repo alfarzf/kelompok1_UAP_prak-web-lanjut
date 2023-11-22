@@ -36,7 +36,9 @@ $routes->get('/pengurus/laporan', [PengurusController::class ,'laporan']);
 $routes->get('/pengurus/laporan/(:any)/edit', [PengurusController::class ,'laporan_edit']);
 // $routes->post('/pengurus/laporan/store', [PengurusController::class ,'laporan_store']);
 $routes->put('/pengurus/laporan/(:any)', [PengurusController::class ,'laporan_update']);
-// $routes->delete('/pengurus/laporan/(:any)', [PengurusController::class ,'laporan_destroy']);
+$routes->delete('/pengurus/laporan/(:any)', [PengurusController::class ,'laporan_destroy']);
 
 //Warga
 $routes->get('/warga', [WargaController::class ,'index']);
+$routes->get('/warga/laporan/create', [WargaController::class ,'laporan_create']);
+$routes->post('/warga/laporan/create', [WargaController::class ,'laporan_save']);

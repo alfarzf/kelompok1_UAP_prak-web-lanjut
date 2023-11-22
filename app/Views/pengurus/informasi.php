@@ -13,7 +13,7 @@
             <div class="row">
 <div class="col-lg-12">
 <div class="ibox-title table-responsive">
-		<h5>Blok :</h5>
+		<h5>Informasi :</h5>
     <a class="btn btn-primary btn-sm pull-right" href="<?= base_url('pengurus/informasi/create') ?>"><i class="fa fa-pencil-square-o"></i> Tambah Informasi</a>
 </div>
     <div class="ibox-content table-responsive">

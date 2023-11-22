@@ -179,10 +179,10 @@ public function informasi()
     //     return redirect()->to('/pengurus/laporan');
     // }
 
-    // public function laporan_destroy($id){
-    //     $this->laporanModel->deletelaporan($id);
-    //     return redirect()->to('/pengurus/laporan');
-    // }
+    public function laporan_destroy($id){
+        $this->laporanModel->deleteLaporan($id);
+        return redirect()->to('/pengurus/laporan');
+    }
 
     public function laporan_edit($id){
         $data=[
@@ -194,21 +194,9 @@ public function informasi()
 
     public function laporan_update($id){
         $data=[
-            'judul_laporan' => $this->request->getVar('judul_laporan'),
-            'deskripsi_laporan' => $this->request->getVar('deskripsi_laporan'),
-            'id_blok' => $this->request->getVar('blok'),
-            // 'nama_laporan' => $this->request->getVar('nama_laporan'),
+            'status_laporan' => $this->request->getVar('status_laporan')
         ];
-        $path='assets/uploads/img/';
-        $foto=$this->request->getFile('foto');
-        if($foto->isValid()){
-            $name = $foto->getRandomName();
-            if($foto->move($path, $name)){
-                $foto = base_url($path . $name);
-                $data['foto']=$foto;
-            }
-        }
-        $result = $this->laporanModel->updatelaporan($data, $id);
+        $result = $this->laporanModel->updateLaporan($data, $id);
         if(!$result){
             return redirect()->back()->withInput()->with('error', 'Gagal Menyimpan Data');
         }
