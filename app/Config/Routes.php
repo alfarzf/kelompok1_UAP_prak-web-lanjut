@@ -33,3 +33,5 @@ $routes->delete('/pengurus/informasi/(:any)', [PengurusController::class ,'infor
 
 //Warga
 $routes->get('/warga', [WargaController::class ,'index']);
+$routes->get('/warga/laporan/create', [WargaController::class ,'laporan_create']);
+$routes->post('/warga/laporan/create', [WargaController::class ,'laporan_save']);
