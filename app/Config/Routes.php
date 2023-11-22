@@ -31,5 +31,12 @@ $routes->post('/pengurus/informasi/store', [PengurusController::class ,'informas
 $routes->put('/pengurus/informasi/(:any)', [PengurusController::class ,'informasi_update']);
 $routes->delete('/pengurus/informasi/(:any)', [PengurusController::class ,'informasi_destroy']);
 
+$routes->get('/pengurus/laporan', [PengurusController::class ,'laporan']);
+// $routes->get('/pengurus/laporan/create', [PengurusController::class ,'laporan_create']);
+$routes->get('/pengurus/laporan/(:any)/edit', [PengurusController::class ,'laporan_edit']);
+// $routes->post('/pengurus/laporan/store', [PengurusController::class ,'laporan_store']);
+$routes->put('/pengurus/laporan/(:any)', [PengurusController::class ,'laporan_update']);
+// $routes->delete('/pengurus/laporan/(:any)', [PengurusController::class ,'laporan_destroy']);
+
 //Warga
 $routes->get('/warga', [WargaController::class ,'index']);
