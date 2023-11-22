@@ -6,8 +6,9 @@ use App\Models\LaporanModel;
 
 class WargaController extends BaseController
 {
-
+    public $laporanModel;
     public $wargaModel;
+
     public function __construct(){
         $this->laporanModel = new LaporanModel();
     }
@@ -42,6 +43,7 @@ class WargaController extends BaseController
             'jenis_laporan' => $this->request->getVar('jenis_laporan'),
             'deskripsi_laporan' => $this->request->getVar('deskripsi_laporan'),
             'id_warga' => user_id(),
+            'status_laporan' => 'Belum Terverifikasi'
         ]);
         // $jenis_laporan = $this->request->getVar('jenis_laporan');
         // $deskripsi_laporan = $this->request->getVar('deskripsi_laporan');

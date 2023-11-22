@@ -4,15 +4,18 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\BlokModel;
 use App\Models\InformasiModel;
+use App\Models\LaporanModel;
 
 class PengurusController extends BaseController
 {
     public $blokModel;
     public $informasiModel;
+    public $laporanModel;
 
     public function __construct(){
         $this->blokModel = new BlokModel();
         $this->informasiModel = new InformasiModel();
+        $this->laporanModel = new LaporanModel();
     }
     public function index()
     {
@@ -136,5 +139,67 @@ public function informasi()
         }
         return redirect()->to('/pengurus/informasi');
     }
-    
+
+    #Laporan
+    public function laporan()
+    {
+        $data = [
+            // 'title' => 'List User',
+            'laporans' => $this->laporanModel->getLaporan()
+        ];
+        return view('pengurus/laporan', $data);
+    }
+
+    // public function laporan_create(){
+    //     $data = [
+    //         // 'title' => 'List User',
+    //         'bloks' => $this->blokModel->getBlok()
+    //     ];
+    //     return view('pengurus/create_laporan', $data);
+    // }
+
+    // public function laporan_store(){
+    //     $data=[
+    //         'judul_laporan' => $this->request->getVar('judul_laporan'),
+    //         'deskripsi_laporan' => $this->request->getVar('deskripsi_laporan'),
+    //         'id_blok' => $this->request->getVar('blok'),
+    //         // 'nama_laporan' => $this->request->getVar('nama_laporan'),
+    //     ];
+    //     $path='assets/uploads/img/';
+    //     $foto=$this->request->getFile('foto');
+    //     if($foto->isValid()){
+    //         $name = $foto->getRandomName();
+    //         if($foto->move($path, $name)){
+    //             $foto = base_url($path . $name);
+    //             $data['foto']=$foto;
+    //         }
+    //     }
+
+    //     $this->laporanModel->savelaporan($data);
+    //     return redirect()->to('/pengurus/laporan');
+    // }
+
+    public function laporan_destroy($id){
+        $this->laporanModel->deleteLaporan($id);
+        return redirect()->to('/pengurus/laporan');
+    }
+
+    public function laporan_edit($id){
+        $data=[
+            'laporan' => $this->laporanModel->getLaporan($id),
+            // 'bloks' => $this->blokModel->getBlok()
+        ];
+        return view('pengurus/edit_laporan', $data);
+    }
+
+    public function laporan_update($id){
+        $data=[
+            'status_laporan' => $this->request->getVar('status_laporan')
+        ];
+        $result = $this->laporanModel->updateLaporan($data, $id);
+        if(!$result){
+            return redirect()->back()->withInput()->with('error', 'Gagal Menyimpan Data');
+        }
+        return redirect()->to('/pengurus/laporan');
+    }
 }

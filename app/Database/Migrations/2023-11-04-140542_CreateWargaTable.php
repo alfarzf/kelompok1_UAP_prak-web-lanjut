@@ -20,7 +20,7 @@ class CreateWargaTable extends Migration
                 'constraint' => '255'
             ],
             'nik' => [
-                'type' => 'INT',
+                'type' => 'VARCHAR',
                 'constraint' => 16,
                 'unsigned' => true
             ],

@@ -54,7 +54,7 @@
                     <a href="<?= base_url('/pengurus/informasi') ?>"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Informasi</span></a>
                 </li>
                 <li class="">
-                    <a href="#"><i class="fa fa-file-text-o"></i> <span class="nav-label">Laporan</span></a>
+                    <a href="<?= base_url('/pengurus/laporan') ?>"><i class="fa fa-file-text-o"></i> <span class="nav-label">Laporan</span></a>
                 </li>
                 <li class="">
                     <a href="#"><i class="fa fa-credit-card"></i> <span class="nav-label">Pembayaran</span></a>
@@ -83,7 +83,7 @@
                     <span class="m-r-sm text-muted welcome-message">Sistem Informasi Warga</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?= base_url('/logout') ?>">
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
                 </li>

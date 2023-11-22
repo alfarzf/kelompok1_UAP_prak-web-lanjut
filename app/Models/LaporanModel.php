@@ -13,7 +13,7 @@ class LaporanModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['jenis_laporan','deskripsi_laporan','id_warga'];
+    protected $allowedFields    = ['jenis_laporan','deskripsi_laporan','id_warga', 'status_laporan'];
 
     // Dates
     protected $useTimestamps = true;
@@ -39,10 +39,20 @@ class LaporanModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-
-    public function saveLaporan($data)
-    {
-        return $this->insert($data);
+    public function saveLaporan($data){
+        $this->insert($data);
+    }
+    public function getLaporan($id=null){
+        if($id != null){
+            return $this->select('laporan.*, warga.nama')->join('warga', 'warga.id=laporan.id_warga')->find($id);
+        }
+        return $this->select('laporan.*, warga.nama')->join('warga', 'warga.id=laporan.id_warga')->findAll();
+    }
+    public function updateLaporan($data, $id){
+        return $this->update($id, $data);
+    }
+    public function deleteLaporan($id){
+        return $this->delete($id);
     }
 
 }

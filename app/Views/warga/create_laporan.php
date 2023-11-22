@@ -25,13 +25,14 @@
                                 <div class="input-group">
                                     <select class="form-select" name="jenis_laporan" id="jenis_laporan">
                                         <option selected disabled>Choose...</option>
-                                        <option value="kegaduhan">Laporan Kegaduhan</option>
-                                        <option value="surat_keterangan">Pengajuan Surat Keterangan</option>
-                                        <option value="lapor_tamu">Lapor Tamu</option>
-                                        <option value="lapor_satpam">Lapor Satpam</option>
+                                        <option value="Pengaduan">Laporan Kegaduhan</option>
+                                        <option value="Surat Keterangan">Pengajuan Surat Keterangan</option>
+                                        <option value="Lapor Tamu">Lapor Tamu</option>
+                                        <option value="Lapor Satpam">Lapor Satpam</option>
                                         <!-- Add more options as needed -->
                                     </select>
-                                    <input type="" class="form-control" id="jenis_laporan_text" name="jenis_laporan_text" value="<?= old('jenis_laporan_text');?>" placeholder="Other">
+                                    <input type="" class="form-control" id="jenis_laporan_text" name="jenis_laporan_text" value="<?= old('jenis_laporan_text');?>" placeholder="Other" style='margin-top: 5px; margin-bottom: 10px;'>
+
                                 </div>
                             </div>
                             

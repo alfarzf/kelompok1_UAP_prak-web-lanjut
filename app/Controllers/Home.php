@@ -12,7 +12,7 @@ class Home extends BaseController
         if (in_groups("user")){
             $path = "warga";
         }else if(in_groups("super admin")){
-            $path = "superadmin";
+            $path = "admin";
         }
             return redirect()->route($path); 
     }
