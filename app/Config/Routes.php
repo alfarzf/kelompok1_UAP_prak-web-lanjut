@@ -14,7 +14,7 @@ $routes->get('/login', 'Home::login');
 //Admin
 $routes->get('/admin', [AdminController::class ,'index']);
 $routes->get('/admin/daftar_warga', [AdminController::class ,'daftar_warga']);
-
+$routes->get('/admin/add_akun', [AdminController::class ,'add_akun']);
 // Pengurus
 $routes->get('/pengurus', [PengurusController::class ,'index']);
 $routes->get('/pengurus/blok', [PengurusController::class ,'blok']);
