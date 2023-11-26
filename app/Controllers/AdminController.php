@@ -14,4 +14,9 @@ class AdminController extends BaseController
     {
         return view('admin/daftar_warga');
     }
+
+    public function add_akun()
+    {
+        return view('admin/add_akun');
+    }
 }

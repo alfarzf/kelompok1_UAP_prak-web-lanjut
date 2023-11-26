@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!-- Developed By Ichwan Almaza Ilmu Komputer 2014 -->
 <html>
@@ -12,7 +13,7 @@
     <link href="https://e-kkn.unila.ac.id/css/app.css" rel="stylesheet">
     <link href="https://e-kkn.unila.ac.id/css/style.css" rel="stylesheet">
     <link href="https://e-kkn.unila.ac.id/css/animate.css" rel="stylesheet">
-    
+    <link href="https://e-kkn.unila.ac.id/css/sweetalert.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
     <!-- <script>
@@ -42,7 +43,7 @@
                     <div class="logo-element">
                         SIWa
                     </div>
-                </li>
+                    </li>
                 <li class="active">
                     <a href="<?= base_url('/admin') ?>"><i class="fa fa-home"></i> <span class="nav-label">Home</span></a>
                 </li>
@@ -67,106 +68,58 @@
     </aside>
 </div>
 <div id="page-wrapper" class="gray-bg dashbard-1">
-            <!-- header -->
-    <div class="row border-bottom">
-        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0;">
-            <div class="navbar-header">
-                <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-            </div>
-            <ul class="nav navbar-top-links navbar-right">
-                <li>
-                    <span class="m-r-sm text-muted welcome-message">Sistem Informasi Warga</span>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="fa fa-sign-out"></i> Log out
-                    </a>
-                </li>
-            </ul>
-        </nav>
-</div>
-            <!-- Page Header -->
-                <div class="row">
-                    <div class="col-lg-12">
-                    <!-- dashboard -->
-                        <div class="wrapper wrapper-content animated fadeIn">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                Ini Halaman Super Admin
-    <div class="container">
-        <h1>Super Admin</h1>
-        <form action="submit.php" method="post">
-            <label for="nama" class='form-label'>Nama Warga:</label>
-            <input type="text" id="nama" name="nama" class='form-control'>
-            <br>
-            <label for="nomor_rumah">Nomor Rumah:</label>
-            <input type="text" id="nomor_rumah" name="nomor_rumah">
-            <br>
-            <label for="jumlah_pembayaran">Jumlah Pembayaran:</label>
-            <input type="number" id="jumlah_pembayaran" name="jumlah_pembayaran" required>
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
 
-            <input type="submit" value="Tambah">
-        </form>
-    </div>
-    <div class="container">
-        <h1>Informasi Laporan Pembayaran</h1>
-        <!-- Tabel untuk menampilkan informasi laporan pembayaran -->
-        <table>
-            <tr>
-                <th>Nama Warga</th>
-                <th>Nomor Rumah</th>
-                <th>Jumlah Pembayaran</th>
-                <th>Aksi</th>
-            </tr>
-            <tr>
-                <td>Nama 1</td>
-                <td>Rumah 1</td>
-                <td>1000</td>
-                <td>
-                    <button class="btn-edit">Edit</button>
-                    <button class="btn-delete">Delete</button>
-                </td>
-            </tr>
-            <!-- Data laporan pembayaran dapat ditampilkan di sini -->
-        </table>
-    </div>
-    <div class="container">
-        <h1>Daftar Warga</h1>
-        <!-- Tabel untuk menampilkan data warga -->
-        <table>
-            <tr>
-                <th>Nama Warga</th>
-                <th>Nomor Rumah</th>
-                <th>Alamat</th>
-                <th>Aksi</th>
-            </tr>
-            <tr>
-                <td>Nama 1</td>
-                <td>Rumah 1</td>
-                <td>Jalan ABC 123</td>
-                <td>
-                    <button class="btn-edit">Edit</button>
-                    <button class="btn-delete">Delete</button>
-                </td>
-            </tr>
-            <!-- Data warga dapat ditampilkan di sini -->
-        </table>
-    </div>
+            <div class="card">
+                <h2 class="card-header"><?=lang('Auth.register')?></h2>
+                <div class="card-body">
 
-                                </div>
-                            </div>
+                    <?= view('Myth\Auth\Views\_message_block') ?>
+
+                    <form action="<?= url_to('register') ?>" method="post">
+                        <?= csrf_field() ?>
+
+                        <div class="form-group">
+                            <label for="email"><?=lang('Auth.email')?></label>
+                            <input type="email" class="form-control <?php if (session('errors.email')) : ?>is-invalid<?php endif ?>"
+                                   name="email" aria-describedby="emailHelp" placeholder="<?=lang('Auth.email')?>" value="<?= old('email') ?>">
+                            <small id="emailHelp" class="form-text text-muted"><?=lang('Auth.weNeverShare')?></small>
                         </div>
-                    </div>
+
+                        <div class="form-group">
+                            <label for="username"><?=lang('Auth.username')?></label>
+                            <input type="text" class="form-control <?php if (session('errors.username')) : ?>is-invalid<?php endif ?>" name="username" placeholder="<?=lang('Auth.username')?>" value="<?= old('username') ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password"><?=lang('Auth.password')?></label>
+                            <input type="password" name="password" class="form-control <?php if (session('errors.password')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.password')?>" autocomplete="off">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pass_confirm"><?=lang('Auth.repeatPassword')?></label>
+                            <input type="password" name="pass_confirm" class="form-control <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.repeatPassword')?>" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="group">Role : </label>
+                            <select name="group">
+                                <option value="user">Warga</option>
+                                <option value="admin">pengurus</option>
+                            </select>
+                        </div>
+                        <br>
+
+                        <button type="submit" class="btn btn-primary btn-block"><?=lang('Auth.register')?></button>
+                    </form>
+
+
+                    <hr>
+
+                    <p><?=lang('Auth.alreadyRegistered')?> <a href="<?= url_to('login') ?>"><?=lang('Auth.signIn')?></a></p>
                 </div>
+            </div>
+
+        </div>
+    </div>
 </div>
-    <script src="https://e-kkn.unila.ac.id/js/sweetalert2.js"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111710111-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-111710111-1');
-    </script>
-</body>
-</html>

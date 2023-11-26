@@ -9,7 +9,7 @@
                 <h2 class="card-header"><?=lang('Auth.register')?></h2>
                 <div class="card-body">
 
-                    <?= view('App\Views\Auth\_message_block') ?>
+                    <?= view('Myth\Auth\Views\_message_block') ?>
 
                     <form action="<?= url_to('register') ?>" method="post">
                         <?= csrf_field() ?>
@@ -35,7 +35,13 @@
                             <label for="pass_confirm"><?=lang('Auth.repeatPassword')?></label>
                             <input type="password" name="pass_confirm" class="form-control <?php if (session('errors.pass_confirm')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.repeatPassword')?>" autocomplete="off">
                         </div>
-
+                        <div class="form-group">
+                            <label for="group">Role : </label>
+                            <select name="group">
+                                <option value="user">Warga</option>
+                                <option value="admin">pengurus</option>
+                            </select>
+                        </div>
                         <br>
 
                         <button type="submit" class="btn btn-primary btn-block"><?=lang('Auth.register')?></button>
