@@ -30,7 +30,7 @@
                                 <label for="deskripsi_laporan" class="form-label">Laporan</label>
                                 <textarea name="deskripsi_laporan" class="form-control"><?= old('deskripsi_laporan');?></textarea><br>
                                 <label for="pelapor" class="form-label">Pelapor : </label>
-                                <select name="pelapor" id="pelapor" class="form-select">
+                                <select name="pelapor" id="pelapor" class="form-select" style='width:200px;'>
                                     <option selected hidden value="<?= old('pelapor');?>">Pilih Pelapor</option>
                                     <?php foreach($warga as $item){
                                         ?>
@@ -42,7 +42,7 @@
                                 </select>
                                 <br>
                             </div>
-                            <input type="submit" class="btn btn-primary">
+                            <input type="submit" class="btn btn-primary" style="margin-top: 10px;">
                         </form>
                     </div>
                 </div>
@@ -58,4 +58,5 @@
         document.getElementById('jenis_laporan_text').value = selectedOption;
     });
 </script>
+
 <?= $this->endSection() ?>

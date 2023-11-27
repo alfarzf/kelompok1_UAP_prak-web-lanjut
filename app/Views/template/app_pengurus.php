@@ -10,6 +10,8 @@
     <title>Sistem Informasi Warga</title>
 
     <!-- <meta name="csrf-token" content="hylrLk5vZHOOK2PVFsidJ2uZjAnBFL3G0d7d2IOr"> -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    
     <link href="https://e-kkn.unila.ac.id/css/app.css" rel="stylesheet">
     <link href="https://e-kkn.unila.ac.id/css/style.css" rel="stylesheet">
     <link href="https://e-kkn.unila.ac.id/css/animate.css" rel="stylesheet">
@@ -101,6 +103,12 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'UA-111710111-1');
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        $('#pelapor').select2();
+        });
     </script>
 </body>
 </html>
