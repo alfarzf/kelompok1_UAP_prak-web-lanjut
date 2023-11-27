@@ -6,6 +6,8 @@ use App\Models\BlokModel;
 use App\Models\InformasiModel;
 use App\Models\LaporanModel;
 use App\Models\WargaModel;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class PengurusController extends BaseController
 {
@@ -195,5 +197,34 @@ public function informasi()
             return redirect()->back()->withInput()->with('error', 'Gagal Menyimpan Data');
         }
         return redirect()->to('/pengurus/laporan');
+    }
+    public function export(){
+        $data = $this->laporanModel->getLaporan();
+        $fileName = 'laporan.xlsx';  
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setCellValue('A1', 'Jenis Laporan');
+        $sheet->setCellValue('B1', 'Deskripsi Laporan');
+        $sheet->setCellValue('C1', 'Pelapor');
+        $sheet->setCellValue('D1', 'Status Laporan');
+        
+        $rows = 2;
+        foreach ($data as $item){
+            $sheet->setCellValue('A' . $rows, $item['jenis_laporan']);
+            $sheet->setCellValue('B' . $rows, $item['deskripsi_laporan']);
+            $sheet->setCellValue('C' . $rows, $item['nama']);
+            $sheet->setCellValue('D' . $rows, $item['status_laporan']);
+            $rows++;
+        } 
+
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename=' . $fileName);
+        header('Cache-Control: max-age=0');
+
+        $writer = new Xlsx($spreadsheet);
+        $writer->save('php://output');
+        exit;
+
+        // return redirect()->to('/pengurus/laporan');
     }
 }

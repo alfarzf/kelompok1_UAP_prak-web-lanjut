@@ -23,7 +23,7 @@ $routes->get('/pengurus/blok/(:any)/edit', [PengurusController::class ,'blok_edi
 $routes->post('/pengurus/blok/store', [PengurusController::class ,'blok_store']);
 $routes->put('/pengurus/blok/(:any)', [PengurusController::class ,'blok_update']);
 $routes->delete('/pengurus/blok/(:any)', [PengurusController::class ,'blok_destroy']);
-
+$routes->get('/pengurus/laporan/export', [PengurusController::class ,'export']);
 $routes->get('/pengurus/informasi', [PengurusController::class ,'informasi']);
 $routes->get('/pengurus/informasi/create', [PengurusController::class ,'informasi_create']);
 $routes->get('/pengurus/informasi/(:any)/edit', [PengurusController::class ,'informasi_edit']);
