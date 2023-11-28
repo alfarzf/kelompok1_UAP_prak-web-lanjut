@@ -23,3 +23,7 @@ $routes->get('/admin', [AdminController::class ,'index']);
 
 // daftar warga
 $routes->get('/daftar_warga', [AdminController::class ,'daftar_warga']);
+$routes->delete('/daftar_warga/(:num)', [AdminController::class ,'destroy']);
+$routes->get('/create_warga', [AdminController::class ,'create_warga']);
+$routes->get('/edit_warga/(:num)', [AdminController::class ,'edit_warga']);
+$routes->post('/daftar_warga', [AdminController::class ,'store']);

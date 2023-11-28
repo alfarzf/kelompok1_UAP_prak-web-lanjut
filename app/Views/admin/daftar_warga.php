@@ -95,41 +95,65 @@
                         </div>
                     </div>
                 </div>
+                <!-- ... Bagian Header dan lainnya ... -->
+<!-- ... Bagian Header dan lainnya ... -->
 
-                <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">No</th>
-      <th scope="col">Nama kepala keluarga</th>
-      <th scope="col">Nik</th>
-      <th scope="col">Blok</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Aninda Revi Oktaviani</td>
-      <td>1801234567896</td>
-      <td>P31</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Arpon Rilo Pambudi</td>
-      <td>1801678904321</td>
-      <td>D12</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td >Ariva Elwa Nanda</td>
-      <td>1801678904321</td>
-      <td>C16</td>
-    </tr>
-  </tbody>
-</table>
+<!-- Page Header -->
+<div class="row">
+    <div class="col-lg-12">
+        <!-- dashboard -->
+        <div class="wrapper wrapper-content animated fadeIn">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Daftar Warga</h2>
+                        
+<button type="button" class="btn btn-primary" onclick="location.href='/create_warga'">Tambah Data</button>
 
-<button type="button" class="btn btn-primary">tambah data</button>
-<button type="button" class="btn btn-danger">Hapus</button>
-<button type="button" class="btn btn-warning">Edit data</button>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Nama</th>
+                                <th>NIK</th>
+                                <th>Alamat</th>
+                                <th>Blok</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($daftar_warga as $warga) : ?>
+                                <tr>
+                                    <td><?= $warga['nama']; ?></td>
+                                    <td><?= $warga['nik']; ?></td>
+                                    <td><?= $warga['alamat']; ?></td>
+                                    <td><?= $warga['id_blok']; ?></td>
+                                    <td>
+                                        <a href="<?= base_url('/edit_warga/' . $warga['id']) ?>" class="btn btn-warning">Edit</a>
+
+                                        <form action="<?= base_url('/daftar_warga/' . $warga['id']) ?>" method="post" style="display:inline-block;">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            <?= csrf_field()?>
+                                            <button type="submit" class="btn btn-danger" onclick="return confirm('Anda yakin ingin menghapus data?')">Hapus</button>
+                                        </form>
+                                    </td>
+
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tombol-tombol di bagian bawah... -->
+
+<!-- ... Script dan lainnya ... -->
+
+
+                
+
+
 </div>
     <script src="https://e-kkn.unila.ac.id/js/sweetalert2.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->

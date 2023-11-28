@@ -16,7 +16,7 @@ class WargaModel extends Model
     protected $allowedFields    = ['nama','nik','alamat','id_blok'];
 
     // Dates
-    protected $useTimestamps = false;
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
@@ -38,4 +38,18 @@ class WargaModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function saveWarga($data){
+        $this->insert($data);
+
+    }
+
+    public function updateWarga($data, $id){
+        $this->update($id,$data);
+
+    }
+    public function deleteWarga($id){
+        $this->delete($id);
+    }
+    
 }
