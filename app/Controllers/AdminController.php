@@ -101,4 +101,9 @@ class AdminController extends BaseController
 
         return redirect()->to(base_url('/daftar_warga'))->with('success', 'Data warga berhasil dihapus.');
     }
+
+    public function add_akun()
+    {
+        return view('admin/add_akun');
+    }
 }

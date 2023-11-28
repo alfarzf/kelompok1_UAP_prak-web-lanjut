@@ -38,4 +38,20 @@ class BlokModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function saveBlok($data){
+        $this->insert($data);
+    }
+    public function getBlok($id=null){
+        if($id != null){
+            return $this->select('blok.*')->find($id);
+        }
+        return $this->select('blok.*')->findAll();
+    }
+    public function updateBlok($data, $id){
+        return $this->update($id, $data);
+    }
+    public function deleteBlok($id){
+        return $this->delete($id);
+    }
 }

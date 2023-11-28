@@ -51,7 +51,7 @@
                             <img alt="image" class="img-circle" height="50" width="50" src='../assets/img/ular.png' />
                         </span>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                        <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Titisan Raja Ular</strong>
+                        <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Rizki Abdillah</strong>
                         </span> <span class="text-muted text-xs block">Option <b class="caret"></b></span> </span> </a>
                                             <ul class="dropdown-menu animated fadeInRight m-t-xs">
                             <li><a href="#">Profile</a></li>
@@ -91,7 +91,7 @@
                     <span class="m-r-sm text-muted welcome-message">Sistem Informasi Warga</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/logout">
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
                 </li>

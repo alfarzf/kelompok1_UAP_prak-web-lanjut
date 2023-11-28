@@ -38,6 +38,7 @@ class WargaModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+<<<<<<< HEAD
 
     public function saveWarga($data){
         $this->insert($data);
@@ -52,4 +53,21 @@ class WargaModel extends Model
         $this->delete($id);
     }
     
+=======
+    public function saveWarga($data){
+        $this->insert($data);
+    }
+    public function getWarga($id=null){
+        if($id != null){
+            return $this->select('warga.*, blok.nama_blok')->join('blok', 'blok.id=warga.id_blok')->find($id);
+        }
+        return $this->select('warga.*, blok.nama_blok')->join('blok', 'blok.id=warga.id_blok')->findAll();
+    }
+    public function updateWarga($data, $id){
+        return $this->update($id, $data);
+    }
+    public function deleteWarga($id){
+        return $this->delete($id);
+    }
+>>>>>>> 5122d6b69fed67b8bc2ca005504c2bb6aea7d3b5
 }

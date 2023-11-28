@@ -21,7 +21,7 @@ class CreateLaporanTable extends Migration
             ],
             'deskripsi_laporan' => [
                 'type' => 'VARCHAR',
-                'constraint' => '10'
+                'constraint' => '255'
             ],
             'id_warga' => [
                 'type' => 'INT',
