@@ -15,18 +15,20 @@ $routes->get('/login', 'Home::login');
 $routes->get('/admin', [AdminController::class ,'index']);
 $routes->get('/admin/daftar_warga', [AdminController::class ,'daftar_warga']);
 $routes->get('/admin/add_akun', [AdminController::class ,'add_akun']);
-// $routes->get('/admin/informasi', [PengurusController::class ,'informasi']);
-// $routes->get('/admin/informasi/create', [PengurusController::class ,'informasi_create']);
-// $routes->get('/admin/informasi/(:any)/edit', [PengurusController::class ,'informasi_edit']);
-// $routes->post('/admin/informasi/store', [PengurusController::class ,'informasi_store']);
-// $routes->put('/admin/informasi/(:any)', [PengurusController::class ,'informasi_update']);
-// $routes->delete('/admin/informasi/(:any)', [PengurusController::class ,'informasi_destroy']);
-// $routes->get('/admin/laporan', [PengurusController::class ,'laporan']);
-// $routes->get('/admin/laporan/create', [PengurusController::class ,'laporan_create']);
-// $routes->get('/admin/laporan/(:any)/edit', [PengurusController::class ,'laporan_edit']);
-// $routes->post('/admin/laporan/store', [PengurusController::class ,'laporan_store']);
-// $routes->put('/admin/laporan/(:any)', [PengurusController::class ,'laporan_update']);
-// $routes->delete('/admin/laporan/(:any)', [PengurusController::class ,'laporan_destroy']);
+$routes->get('/admin/informasi', [AdminController::class ,'informasi']);
+$routes->get('/admin/informasi/create', [AdminController::class ,'informasi_create']);
+$routes->get('/admin/informasi/(:any)/edit', [AdminController::class ,'informasi_edit']);
+$routes->post('/admin/informasi/store', [AdminController::class ,'informasi_store']);
+$routes->put('/admin/informasi/(:any)', [AdminController::class ,'informasi_update']);
+$routes->delete('/admin/informasi/(:any)', [AdminController::class ,'informasi_destroy']);
+$routes->get('/admin/laporan', [AdminController::class ,'laporan']);
+$routes->get('/admin/laporan/create', [AdminController::class ,'laporan_create']);
+$routes->get('/admin/laporan/(:any)/edit', [AdminController::class ,'laporan_edit']);
+$routes->post('/admin/laporan/store', [AdminController::class ,'laporan_store']);
+$routes->put('/admin/laporan/(:any)', [AdminController::class ,'laporan_update']);
+$routes->delete('/admin/laporan/(:any)', [AdminController::class ,'laporan_destroy']);
+$routes->get('/admin/laporan/export', [AdminController::class ,'export']);
+
 // Pengurus
 $routes->get('/pengurus', [PengurusController::class ,'index']);
 $routes->get('/pengurus/blok', [PengurusController::class ,'blok']);
@@ -48,6 +50,12 @@ $routes->get('/pengurus/laporan/(:any)/edit', [PengurusController::class ,'lapor
 $routes->post('/pengurus/laporan/store', [PengurusController::class ,'laporan_store']);
 $routes->put('/pengurus/laporan/(:any)', [PengurusController::class ,'laporan_update']);
 $routes->delete('/pengurus/laporan/(:any)', [PengurusController::class ,'laporan_destroy']);
+$routes->get('/pengurus/warga', [PengurusController::class ,'warga']);
+$routes->get('/pengurus/warga/create', [PengurusController::class ,'warga_create']);
+$routes->get('/pengurus/warga/(:any)/edit', [PengurusController::class ,'warga_edit']);
+$routes->post('/pengurus/warga/store', [PengurusController::class ,'warga_store']);
+$routes->put('/pengurus/warga/(:any)', [PengurusController::class ,'warga_update']);
+$routes->delete('/pengurus/warga/(:any)', [PengurusController::class ,'warga_destroy']);
 
 //Warga
 $routes->get('/warga', [WargaController::class ,'index']);

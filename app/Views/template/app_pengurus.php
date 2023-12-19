@@ -108,5 +108,10 @@
         $('#pelapor').select2();
         });
     </script>
+    <script>
+        $(document).ready(function() {
+        $('#nama_blok').select2();
+        });
+    </script>
 </body>
 </html>

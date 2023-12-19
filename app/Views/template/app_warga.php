@@ -93,7 +93,7 @@
                     <span class="m-r-sm text-muted welcome-message">Sistem Informasi Warga</span>
                 </li>
                 <li>
-                    <a href="logout">
+                    <a href="<?= base_url('/logout') ?>">
                         <i class="fa fa-sign-out"></i> Log out
                     </a>
                 </li>
