@@ -1,35 +1,27 @@
+
 <!DOCTYPE html>
-<!-- Developed By Ichwan Almaza Ilmu Komputer 2014 -->
 <html>
+
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="apple-touch-icon" sizes="76x76" href="https://e-kkn.unila.ac.id/loginStyle/assets/img/unila.png">
-    <link rel="icon" type="image/png" href="https://e-kkn.unila.ac.id/loginStyle/assets/img/unila.png">
-    <title>Sistem Informasi Warga</title>
 
-    <!-- <meta name="csrf-token" content="hylrLk5vZHOOK2PVFsidJ2uZjAnBFL3G0d7d2IOr"> -->
+    <title>SIWa</title>
+
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-    <link href="https://e-kkn.unila.ac.id/css/app.css" rel="stylesheet">
-    <link href="https://e-kkn.unila.ac.id/css/style.css" rel="stylesheet">
-    <link href="https://e-kkn.unila.ac.id/css/animate.css" rel="stylesheet">
-    <link href="https://e-kkn.unila.ac.id/css/sweetalert.css" rel="stylesheet">
-    <link href="https://e-kkn.unila.ac.id/css/FootTable/footable.core.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= base_url('assets/css/animate.css');?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css');?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/jquery.gritter.css');?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/style.css');?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- <script>
-        window.Laravel = {"csrfToken":"hylrLk5vZHOOK2PVFsidJ2uZjAnBFL3G0d7d2IOr"};
-    </script> -->
 </head>
 
 <body>
-    <script type="text/javascript" src="https://e-kkn.unila.ac.id/js/app.js"></script>
-<div id="wrapper">
-        <!-- sidebar  -->
-    <aside style='position: fixed;'>
+    <div id="wrapper">
     <nav class="navbar-default navbar-static-side" role="navigation">
-        <div class="sidebar-collapse">
+    <div class="sidebar-collapse">
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
                     <div class="dropdown profile-element">
@@ -56,11 +48,11 @@
                 <li class="">
                     <a href="<?= base_url('/pengurus/laporan') ?>"><i class="fa fa-file-text-o"></i> <span class="nav-label">Laporan</span></a>
                 </li>
-                <!-- <li class="">
-                    <a href="#"><i class="fa fa-credit-card"></i> <span class="nav-label">Pembayaran</span></a>
-                </li> -->
                 <li class="">
-                    <a href="<?= base_url('/pengurus/warga') ?>"><i class="fa fa-users"></i> <span class="nav-label">Daftar Warga</span></a>
+                    <a href="#"><i class="fa fa-credit-card"></i> <span class="nav-label">Pembayaran</span></a>
+                </li>
+                <li class="">
+                    <a href="#"><i class="fa fa-users"></i> <span class="nav-label">Daftar Warga</span></a>
                 </li>
                 <li class="">
                     <a href="<?= base_url('/pengurus/blok') ?>"><i class="fa fa-list"></i> <span class="nav-label">Daftar Blok</span></a>
@@ -68,14 +60,11 @@
             </ul>
         </div>
     </nav>
-    </aside>
-</div>
 
-<div id="page-wrapper" class="gray-bg dashbard-1">
-            <!-- header -->
-    <div class="row border-bottom">
-        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0;">
-            <div class="navbar-header">
+        <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
                 <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
             </div>
             <ul class="nav navbar-top-links navbar-right">
@@ -89,11 +78,25 @@
                 </li>
             </ul>
         </nav>
-</div>
-
-            <!-- Page Header -->
+        </div> 
+        <div class="wrapper wrapper-content">
             <?= $this->renderSection('content') ?>
-    <script src="https://e-kkn.unila.ac.id/js/sweetalert2.js"></script>
+        </div>
+        <div class="footer">
+            <div class="float-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2018
+            </div>
+        </div>
+
+        </div>
+        </div>
+
+    <!-- Mainly scripts -->
+    <!-- <script src="https://e-kkn.unila.ac.id/js/sweetalert2.js"></script> -->
+    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111710111-1"></script>
     <script>
@@ -106,6 +109,33 @@
     <script>
         $(document).ready(function() {
         $('#pelapor').select2();
+        });
+    </script>
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Peity -->
+    <script src="js/plugins/peity/jquery.peity.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+
+    <!-- Peity -->
+    <script src="js/demo/peity-demo.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
         });
     </script>
 </body>

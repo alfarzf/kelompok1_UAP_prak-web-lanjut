@@ -15,6 +15,18 @@ $routes->get('/login', 'Home::login');
 $routes->get('/admin', [AdminController::class ,'index']);
 $routes->get('/admin/daftar_warga', [AdminController::class ,'daftar_warga']);
 $routes->get('/admin/add_akun', [AdminController::class ,'add_akun']);
+// $routes->get('/admin/informasi', [PengurusController::class ,'informasi']);
+// $routes->get('/admin/informasi/create', [PengurusController::class ,'informasi_create']);
+// $routes->get('/admin/informasi/(:any)/edit', [PengurusController::class ,'informasi_edit']);
+// $routes->post('/admin/informasi/store', [PengurusController::class ,'informasi_store']);
+// $routes->put('/admin/informasi/(:any)', [PengurusController::class ,'informasi_update']);
+// $routes->delete('/admin/informasi/(:any)', [PengurusController::class ,'informasi_destroy']);
+// $routes->get('/admin/laporan', [PengurusController::class ,'laporan']);
+// $routes->get('/admin/laporan/create', [PengurusController::class ,'laporan_create']);
+// $routes->get('/admin/laporan/(:any)/edit', [PengurusController::class ,'laporan_edit']);
+// $routes->post('/admin/laporan/store', [PengurusController::class ,'laporan_store']);
+// $routes->put('/admin/laporan/(:any)', [PengurusController::class ,'laporan_update']);
+// $routes->delete('/admin/laporan/(:any)', [PengurusController::class ,'laporan_destroy']);
 // Pengurus
 $routes->get('/pengurus', [PengurusController::class ,'index']);
 $routes->get('/pengurus/blok', [PengurusController::class ,'blok']);
@@ -30,7 +42,6 @@ $routes->get('/pengurus/informasi/(:any)/edit', [PengurusController::class ,'inf
 $routes->post('/pengurus/informasi/store', [PengurusController::class ,'informasi_store']);
 $routes->put('/pengurus/informasi/(:any)', [PengurusController::class ,'informasi_update']);
 $routes->delete('/pengurus/informasi/(:any)', [PengurusController::class ,'informasi_destroy']);
-
 $routes->get('/pengurus/laporan', [PengurusController::class ,'laporan']);
 $routes->get('/pengurus/laporan/create', [PengurusController::class ,'laporan_create']);
 $routes->get('/pengurus/laporan/(:any)/edit', [PengurusController::class ,'laporan_edit']);

@@ -46,7 +46,7 @@
                 <span class="input-group-text input text-light " style="width:30vw;height:10vh;">
                     <i class="fa-regular fa-user"></i> 
                     
-							<input type="email"style="border-radius:50%;" class="form-control no-border username <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.email')?>"
+							<input type="text"style="border-radius:50%;" class="form-control no-border username <?php if (session('errors.login')) : ?>is-invalid<?php endif ?>" placeholder="<?=lang('Auth.email')?>"
 								   name="login" >
 							<div class="invalid-feedback">
 								<?= session('errors.login') ?>
