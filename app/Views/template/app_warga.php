@@ -17,7 +17,23 @@
     <link href="https://e-kkn.unila.ac.id/css/FootTable/footable.core.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 10px;
+            padding: 10px;
+        }
 
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border: 10px solid #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+    </style>
     <!-- <script>
         window.Laravel = {"csrfToken":"hylrLk5vZHOOK2PVFsidJ2uZjAnBFL3G0d7d2IOr"};
     </script> -->
@@ -56,9 +72,9 @@
                 <li class="">
                     <a href="/warga/laporan/create"><i class="fa fa-file-text-o"></i> <span class="nav-label">Laporan</span></a>
                 </li>
-                <li class="">
+                <!-- <li class="">
                     <a href="#"><i class="fa fa-credit-card"></i> <span class="nav-label">Pembayaran</span></a>
-                </li>
+                </li> -->
             </ul>
         </div>
     </nav>

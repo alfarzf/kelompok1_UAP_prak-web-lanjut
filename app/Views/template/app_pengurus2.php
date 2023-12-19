@@ -7,18 +7,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSPINIA | Grid Opons</title>
+    <title>SIWa</title>
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="<?= base_url('assets/css/animate.css');?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css');?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/jquery.gritter.css');?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css');?>">
-    <!-- <link href="https://e-kkn.unila.ac.id/css/app.css" rel="stylesheet">
-    <link href="https://e-kkn.unila.ac.id/css/style.css" rel="stylesheet">
-    <link href="https://e-kkn.unila.ac.id/css/animate.css" rel="stylesheet">
-    <link href="https://e-kkn.unila.ac.id/css/sweetalert.css" rel="stylesheet">
-    <link href="https://e-kkn.unila.ac.id/css/FootTable/footable.core.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>

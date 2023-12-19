@@ -47,23 +47,23 @@
                         SIWa
                     </div>
                 </li>
-                <li class="">
-                    <a href="<?= base_url('/pengurus') ?>"><i class="fa fa-home"></i> <span class="nav-label">Home</span></a>
+                <li class="active">
+                    <a href="<?= base_url('/admin') ?>"><i class="fa fa-home"></i> <span class="nav-label">Home</span></a>
                 </li>
                 <li class="">
-                    <a href="<?= base_url('/pengurus/informasi') ?>"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Informasi</span></a>
+                    <a href="<?= base_url('/admin/informasi') ?>"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Informasi</span></a>
                 </li>
                 <li class="">
-                    <a href="<?= base_url('/pengurus/laporan') ?>"><i class="fa fa-file-text-o"></i> <span class="nav-label">Laporan</span></a>
+                    <a href="<?= base_url('/admin/laporan') ?>"><i class="fa fa-file-text-o"></i> <span class="nav-label">Laporan</span></a>
                 </li>
                 <!-- <li class="">
                     <a href="#"><i class="fa fa-credit-card"></i> <span class="nav-label">Pembayaran</span></a>
                 </li> -->
                 <li class="">
-                    <a href="<?= base_url('/pengurus/warga') ?>"><i class="fa fa-users"></i> <span class="nav-label">Daftar Warga</span></a>
+                    <a href="<?= base_url('/admin/daftar_warga') ?>"><i class="fa fa-list"></i> <span class="nav-label">Daftar Warga</span></a>
                 </li>
                 <li class="">
-                    <a href="<?= base_url('/pengurus/blok') ?>"><i class="fa fa-list"></i> <span class="nav-label">Daftar Blok</span></a>
+                    <a href="<?= base_url('/admin/add_akun') ?>"><i class="fa fa-list"></i> <span class="nav-label">Add Akun</span></a>
                 </li>
             </ul>
         </div>

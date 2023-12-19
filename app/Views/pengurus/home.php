@@ -7,7 +7,7 @@
                         <div class="wrapper wrapper-content animated fadeIn">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    Ini Halaman Awal Pengurus
+                                    <h3>Selamat Datang di Halaman Pengurus</h3>
                                 </div>
                             </div>
                         </div>
