@@ -198,6 +198,70 @@ public function informasi()
         }
         return redirect()->to('/pengurus/laporan');
     }
+## Daftar Warga
+public function warga()
+    {
+        $data = [
+            // 'title' => 'List User',
+            'warga' => $this->wargaModel->getWarga()
+        ];
+        return view('pengurus/warga', $data);
+    }
+
+    public function warga_create(){
+        $data = [
+            // 'title' => 'List User',
+            'blok' => $this->blokModel->getBlok()
+        ];
+        return view('pengurus/create_warga', $data);
+    }
+
+    public function warga_store(){
+        $data=[
+            'nama' => $this->request->getVar('nama'),
+            'nik' => $this->request->getVar('nik'),
+            'alamat' => $this->request->getVar('alamat'),
+            'id_blok' => $this->request->getVar('blok')
+        ];
+
+        $this->wargaModel->saveWarga($data);
+        return redirect()->to('/pengurus/warga');
+    }
+
+    public function warga_destroy($id){
+        // $result = $this->wargaModel->deleteWarga($id);
+        // $this->wargaModel->deleteWarga($id);
+        $result = $this->wargaModel->deleteWarga($id);
+        if(!$result){
+            return redirect()->back()->withInput()->with('error', 'Gagal Menghapus Data');
+        }
+        return redirect()->to('/pengurus/warga');
+    }
+
+    public function warga_edit($id){
+        $data=[
+            'warga' => $this->wargaModel->getWarga($id),
+            'blok' => $this->blokModel->getBlok()
+        ];
+        return view('pengurus/edit_warga', $data);
+    }
+
+    public function warga_update($id){
+        $data=[
+            'nama' => $this->request->getVar('nama'),
+            'nik' => $this->request->getVar('nik'),
+            'alamat' => $this->request->getVar('alamat'),
+            'id_blok' => $this->request->getVar('blok')
+        ];
+        $result = $this->wargaModel->updateWarga($data, $id);
+        if(!$result){
+            return redirect()->back()->withInput()->with('error', 'Gagal Menyimpan Data');
+        }
+        return redirect()->to('/pengurus/warga');
+    }
+    
+
+
     public function export(){
         $data = $this->laporanModel->getLaporan();
         $fileName = 'laporan.xlsx';  

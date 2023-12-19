@@ -47,7 +47,7 @@
                         SIWa
                     </div>
                 </li>
-                <li class="active">
+                <li class="">
                     <a href="<?= base_url('/admin') ?>"><i class="fa fa-home"></i> <span class="nav-label">Home</span></a>
                 </li>
                 <li class="">
