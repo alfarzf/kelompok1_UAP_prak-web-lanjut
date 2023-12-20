@@ -27,9 +27,67 @@ class AdminController extends BaseController
         return view('admin/super_admin');
     }
 
+ 
+
     public function daftar_warga()
     {
-        return view('admin/daftar_warga');
+        $data = [
+            // 'title' => 'List User',
+            'warga' => $this->wargaModel->getWarga()
+        ];
+        return view('admin/daftar_warga', $data);
+    }
+
+    public function warga_create(){
+        $data = [
+            // 'title' => 'List User',
+            'blok' => $this->blokModel->getBlok()
+        ];
+        return view('admin/create_warga', $data);
+    }
+
+    public function warga_store(){
+        $data=[
+            'nama' => $this->request->getVar('nama'),
+            'nik' => $this->request->getVar('nik'),
+            'alamat' => $this->request->getVar('alamat'),
+            'id_blok' => $this->request->getVar('blok')
+        ];
+
+        $this->wargaModel->saveWarga($data);
+        return redirect()->to('/admin/daftar_warga');
+    }
+
+    public function warga_destroy($id){
+        // $result = $this->wargaModel->deleteWarga($id);
+        // $this->wargaModel->deleteWarga($id);
+        $result = $this->wargaModel->deleteWarga($id);
+        if(!$result){
+            return redirect()->back()->withInput()->with('error', 'Gagal Menghapus Data');
+        }
+        return redirect()->to('/admin/daftar_warga');
+    }
+
+    public function warga_edit($id){
+        $data=[
+            'warga' => $this->wargaModel->getWarga($id),
+            'blok' => $this->blokModel->getBlok()
+        ];
+        return view('admin/edit_warga', $data);
+    }
+
+    public function warga_update($id){
+        $data=[
+            'nama' => $this->request->getVar('nama'),
+            'nik' => $this->request->getVar('nik'),
+            'alamat' => $this->request->getVar('alamat'),
+            'id_blok' => $this->request->getVar('blok')
+        ];
+        $result = $this->wargaModel->updateWarga($data, $id);
+        if(!$result){
+            return redirect()->back()->withInput()->with('error', 'Gagal Menyimpan Data');
+        }
+        return redirect()->to('/admin/daftar_warga');
     }
 
     public function add_akun()
