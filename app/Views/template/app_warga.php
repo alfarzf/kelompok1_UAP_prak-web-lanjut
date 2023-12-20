@@ -67,7 +67,7 @@
                     <a href="/warga"><i class="fa fa-home"></i> <span class="nav-label">Home</span></a>
                 </li>
                 <li class="">
-                    <a href="#"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Informasi</span></a>
+                    <a href="<?=base_url('warga/informasi')?>"><i class="fa fa-newspaper-o"></i> <span class="nav-label">Informasi</span></a>
                 </li>
                 <li class="">
                     <a href="/warga/laporan/create"><i class="fa fa-file-text-o"></i> <span class="nav-label">Laporan</span></a>

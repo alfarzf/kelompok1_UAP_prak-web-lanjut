@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\LaporanModel;
+use App\Models\InformasiModel;
 
 class WargaController extends BaseController
 {
@@ -62,6 +63,11 @@ class WargaController extends BaseController
     }
 
     
-
+    public function informasi(){
+        $model = new InformasiModel();
+        $data = $model->select("informasi.*,nama_blok")->join('blok','id_blok=blok.id')->findAll();
+        //dd($data);
+        return view('warga/informasi',["informasi"=>$data]);
+    }
     
 }

@@ -46,10 +46,7 @@ $routes->get('/pengurus/laporan/export', [PengurusController::class ,'export']);
 $routes->get('/pengurus/informasi', [PengurusController::class ,'informasi']);
 $routes->get('/pengurus/informasi/create', [PengurusController::class ,'informasi_create']);
 $routes->get('/pengurus/informasi/(:any)/edit', [PengurusController::class ,'informasi_edit']);
-$routes->post('
-
-
-/pengurus/informasi/store', [PengurusController::class ,'informasi_store']);
+$routes->post('/pengurus/informasi/store', [PengurusController::class ,'informasi_store']);
 $routes->put('/pengurus/informasi/(:any)', [PengurusController::class ,'informasi_update']);
 $routes->delete('/pengurus/informasi/(:any)', [PengurusController::class ,'informasi_destroy']);
 $routes->get('/pengurus/laporan', [PengurusController::class ,'laporan']);
@@ -69,3 +66,35 @@ $routes->delete('/pengurus/warga/(:any)', [PengurusController::class ,'warga_des
 $routes->get('/warga', [WargaController::class ,'index']);
 $routes->get('/warga/laporan/create', [WargaController::class ,'laporan_create']);
 $routes->post('/warga/laporan/create', [WargaController::class ,'laporan_save']);
+$routes->get('/warga/informasi', [WargaController::class ,'informasi']);
+
+
+use App\Config\Auth as AuthConfig;
+
+
+
+// Myth:Auth routes file.
+$routes->group('', ['namespace' => 'App\Controllers'], static function ($routes) {
+    // Load the reserved routes from Auth.php
+    $config         = config(AuthConfig::class);
+    $reservedRoutes = $config->reservedRoutes;
+
+    // Login/out
+    $routes->get($reservedRoutes['login'], 'AuthController::login', ['as' => $reservedRoutes['login']]);
+    $routes->post($reservedRoutes['login'], 'AuthController::attemptLogin');
+    $routes->get($reservedRoutes['logout'], 'AuthController::logout');
+
+    // Registration
+    $routes->get($reservedRoutes['register'], 'AuthController::register', ['as' => $reservedRoutes['register']]);
+    $routes->post($reservedRoutes['register'], 'AuthController::attemptRegister');
+
+    // Activation
+    $routes->get($reservedRoutes['activate-account'], 'AuthController::activateAccount', ['as' => $reservedRoutes['activate-account']]);
+    $routes->get($reservedRoutes['resend-activate-account'], 'AuthController::resendActivateAccount', ['as' => $reservedRoutes['resend-activate-account']]);
+
+    // Forgot/Resets
+    $routes->get($reservedRoutes['forgot'], 'AuthController::forgotPassword', ['as' => $reservedRoutes['forgot']]);
+    $routes->post($reservedRoutes['forgot'], 'AuthController::attemptForgot');
+    $routes->get($reservedRoutes['reset-password'], 'AuthController::resetPassword', ['as' => $reservedRoutes['reset-password']]);
+    $routes->post($reservedRoutes['reset-password'], 'AuthController::attemptReset');
+});

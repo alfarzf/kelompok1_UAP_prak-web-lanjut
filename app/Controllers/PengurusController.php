@@ -72,7 +72,8 @@ class PengurusController extends BaseController
     }
 #Informasi
 public function informasi()
-    {
+    {   
+       
         $data = [
             // 'title' => 'List User',
             'informasis' => $this->informasiModel->getinformasi()
@@ -89,6 +90,7 @@ public function informasi()
     }
 
     public function informasi_store(){
+        
         $data=[
             'judul_informasi' => $this->request->getVar('judul_informasi'),
             'deskripsi_informasi' => $this->request->getVar('deskripsi_informasi'),

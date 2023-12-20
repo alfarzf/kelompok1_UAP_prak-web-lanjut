@@ -157,7 +157,7 @@ class AuthController extends Controller
 
         // Validate passwords since they can only be validated properly here
         $rules = [
-            'password'     => 'required|strong_password',
+            'password'     => 'required',
             'pass_confirm' => 'required|matches[password]',
         ];
 
@@ -175,7 +175,9 @@ class AuthController extends Controller
         if (! empty($this->config->defaultUserGroup)) {
             $users = $users->withGroup($this->config->defaultUserGroup);
         }else{
-            $users = $users->withGroup($this->request->getVar('group'));
+
+           // dd($this->request->getVar('role'));
+            $users = $users->withGroup('admin');
         }
 
         if (! $users->save($user)) {
